@@ -282,7 +282,7 @@ def verify_db():
             count_resp = (
                 supabase_client()
                 .table(table)
-                .select("id", count="exact", head=True)
+                .select("id", count="exact")
                 .execute()
             )
             summary[table] = getattr(count_resp, "count", 0)
